@@ -86,10 +86,13 @@ function App() {
       personService
         .deletePerson(person.id)
         .then(response => {
-          setPersons(persons.filter(person => person.id !== response.id))
-          setFilterPersons(persons.filter(person => person.id !== response.id))
+          setPersons(persons.filter(p => p.id !== response.id))
+          setFilterPersons(persons.filter(p=> p.id !== response.id))
         })
     }
+    setNewName('')
+    setNewNumber('')
+
   }
 
   const handleNameChange = (event) => {
